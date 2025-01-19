@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B0700AB4-E59D-405E-B282-3D2251524722}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>lavoro.My.MyApplication</StartupObject>
+    <RootNamespace>lavoro</RootNamespace>
+    <AssemblyName>lavoro</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>lavoro.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>lavoro.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassEmpresa.vb" />
+    <Compile Include="ClassesVeiculo.vb" />
+    <Compile Include="Classeutilizador.vb" />
+    <Compile Include="Classeutilizadores.vb" />
+    <Compile Include="ClasseVeiculo.vb" />
+    <Compile Include="Cliente.vb" />
+    <Compile Include="Clientes.vb" />
+    <Compile Include=".designer.vb">
+      <DependentUpon>FormAluguer.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAluguer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClasse.Designer.vb">
+      <DependentUpon>FormClasse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormClasse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClientes.Designer.vb">
+      <DependentUpon>FormClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClientesInfo.Designer.vb">
+      <DependentUpon>FormClientesInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormClientesInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFrota.Designer.vb">
+      <DependentUpon>FormFrota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormFrota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.vb">
+      <DependentUpon>FormLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNovoCliente.Designer.vb">
+      <DependentUpon>FormNovoCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormNovoCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNovoUtilizador.Designer.vb">
+      <DependentUpon>FormNovoUtilizador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormNovoUtilizador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNovoVeiculo.Designer.vb">
+      <DependentUpon>FormNovoVeiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormNovoVeiculo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.vb">
+      <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistos.Designer.vb">
+      <DependentUpon>FormRegistos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReserva.Designer.vb">
+      <DependentUpon>FormReserva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReserva.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formutilizadores.Designer.vb">
+      <DependentUpon>Formutilizadores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formutilizadores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formveiculoinfo.designer.vb">
+      <DependentUpon>Formveiculoinfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formveiculoinfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Registo.vb" />
+    <Compile Include="Registos.vb" />
+    <Compile Include="VarGlobal.vb" />
+    <Compile Include="Veiculo.vb" />
+    <Compile Include="Veiculos.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormAluguer.resx">
+      <DependentUpon>FormAluguer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClasse.resx">
+      <DependentUpon>FormClasse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClientes.resx">
+      <DependentUpon>FormClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClientesInfo.resx">
+      <DependentUpon>FormClientesInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFrota.resx">
+      <DependentUpon>FormFrota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNovoCliente.resx">
+      <DependentUpon>FormNovoCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNovoUtilizador.resx">
+      <DependentUpon>FormNovoUtilizador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNovoVeiculo.resx">
+      <DependentUpon>FormNovoVeiculo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistos.resx">
+      <DependentUpon>FormRegistos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReserva.resx">
+      <DependentUpon>FormReserva.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formutilizadores.resx">
+      <DependentUpon>Formutilizadores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formveiculoinfo.resx">
+      <DependentUpon>Formveiculoinfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
