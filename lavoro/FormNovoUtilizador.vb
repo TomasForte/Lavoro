@@ -41,16 +41,19 @@ Public Class FormNovoUtilizador
                             For Each utilizador As Classeutilizador In empresa.Utilizadores
                                 If utilizador.Nivel = 1 Then
                                     If utilizador.Cliente.Nif = txbcliente.Text Then
-                                        If ativo > 0 Then
-                                            If empresa.Utilizadores.item(ativo).Cliente.Nif <> txbcliente.Text Then
-                                                MsgBox("já existe um utilizador com essa nif")
-                                                nifusado = True
-                                                Exit For
+                                        If ativo >= 0 Then
+                                            If Not empresa.Utilizadores.item(ativo).Cliente Is Nothing Then
+                                                If empresa.Utilizadores.item(ativo).Cliente.Nif <> txbcliente.Text Then
+                                                    MsgBox("já existe um utilizador com esse nif")
+                                                    nifusado = True
+                                                    Exit For
+                                                End If
                                             End If
+
                                         Else
 
 
-                                            MsgBox("já existe um utilizador com essa nif")
+                                            MsgBox("já existe um utilizador com esse nif")
                                             nifusado = True
 
                                             Exit For
@@ -64,12 +67,12 @@ Public Class FormNovoUtilizador
                                 Exit For
 
                             End If
-                            'se ativo for maior que 1 é para editar e não criar utilizador
+                            'se ativo maior que 0 é para editar e não criar utilizador
                             If ativo >= 0 Then
                                 empresa.Utilizadores.item(ativo).Utilizador = txbUtilizador.Text
                                 empresa.Utilizadores.item(ativo).Chave = txbchave.Text
                                 empresa.Utilizadores.item(ativo).Nivel = cmbnivel.Text
-
+                                empresa.Utilizadores.item(ativo).Cliente = cliente
                                 empresa.gravar(ficheiro)
                                 Formutilizadores.refreshform()
                                 Me.Close()
@@ -90,14 +93,14 @@ Public Class FormNovoUtilizador
                     Next
 
                     If find = False Then
-                        MsgBox("Ainda não é cliente")
+                        MsgBox("Nif ainda não foi registado")
                     End If
                 Else
 
 
                     If ativo >= 0 Then
                         empresa.Utilizadores.item(ativo).Utilizador = txbUtilizador.Text
-                        empresa.Utilizadores.item(ativo).Utilizador = txbchave.Text
+                        empresa.Utilizadores.item(ativo).Chave = txbchave.Text
                         empresa.Utilizadores.item(ativo).Nivel = cmbnivel.Text
                         empresa.gravar(ficheiro)
                         Formutilizadores.refreshform()
@@ -143,8 +146,10 @@ Public Class FormNovoUtilizador
             If empresa.Utilizadores.item(ativo).Nivel > 1 Then
                 txbcliente.Visible = False
                 lbcliente.Visible = False
+            Else
+                txbcliente.Text = empresa.Utilizadores.item(ativo).Cliente.Nif
             End If
-            txbcliente.Text = empresa.Utilizadores.item(ativo).Cliente.Nif
+
             btAdicionar.Text = "Guardar"
             btnnovocliente.Visible = False
         End If

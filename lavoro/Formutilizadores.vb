@@ -72,7 +72,7 @@
         lvutilizadores.Items.Clear()
 
         For Each utilizador As Classeutilizador In empresa.Utilizadores
-            If utilizador.Nivel = 1 Then
+            If (utilizador.Nivel = 1) And (Not utilizador.Cliente Is Nothing) Then
                 lvutilizadores.Items.Add(New ListViewItem({utilizador.Utilizador, utilizador.Chave, utilizador.Nivel, utilizador.Cliente.Nif}))
             Else
                 lvutilizadores.Items.Add(New ListViewItem({utilizador.Utilizador, utilizador.Chave, utilizador.Nivel}))
